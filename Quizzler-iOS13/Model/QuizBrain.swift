@@ -1,47 +1,31 @@
-
+//
+//  Quiz Brain.swift
+//  Quizzler-iOS13
+//
+//  Created by Owen Jones on 11/13/19.
+//  Copyright © 2019 The App Brewery. All rights reserved.
+//
 
 import Foundation
 
 struct QuizBrain {
+    let quiz = [
+        Question(q: "Sacramento is the capital of California.", a: "True"),
+        Question(q: "The California Quail is the State Bird.", a: "True"),
+        Question(q: "The Garibaldi is the state saltwater fish.", a: "True"),
+        Question(q: "California is the most populous state in the country.", a: "True"),
+        Question(q: "California was the last state to join the United States.", a: "False"),
+        Question(q: "California is considered the Golden State.", a: "True"),
+        Question(q: "Christopher Columbus discovered California.", a: "False"),
+        Question(q: "Gold was first discovered in California in 1849.", a: "True"),
+        Question(q: "California is home to both the tallest and largest tree in the world.", a: "True"),
+        Question(q: "Mount Whitney is the tallest mountain in the United States", a: "False"),
+        Question(q: "The California State Bear is the Black Bear", a: "False"),
+        Question(q: "'Eureka' is the state motto", a: "True")
+    ]
     
     var questionNumber = 0
     var score = 0
-    
-    let quiz = [
-        Question(q: "A slug's blood is green.", a: "True"),
-        Question(q: "Approximately one quarter of human bones are in the feet.", a: "True"),
-        Question(q: "The total surface area of two human lungs is approximately 70 square metres.", a: "True"),
-        Question(q: "In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.", a: "True"),
-        Question(q: "In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.", a: "False"),
-        Question(q: "It is illegal to pee in the Ocean in Portugal.", a: "True"),
-        Question(q: "You can lead a cow down stairs but not up stairs.", a: "False"),
-        Question(q: "Google was originally called 'Backrub'.", a: "True"),
-        Question(q: "Buzz Aldrin's mother's maiden name was 'Moon'.", a: "True"),
-        Question(q: "The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.", a: "False"),
-        Question(q: "No piece of square dry paper can be folded in half more than 7 times.", a: "False"),
-        Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")
-    ]
-    
-    func getQuestionText() -> String {
-        return quiz[questionNumber].text
-    }
-    
-    func getProgress() -> Float {
-        return Float(questionNumber) / Float(quiz.count)
-    }
-    
-    mutating func getScore() -> Int {
-        return score
-    }
-    
-     mutating func nextQuestion() {
-        
-        if questionNumber + 1 < quiz.count {
-            questionNumber += 1
-        } else {
-            questionNumber = 0
-        }
-    }
     
     mutating func checkAnswer(userAnswer: String) -> Bool {
         if userAnswer == quiz[questionNumber].answer {
@@ -51,5 +35,26 @@ struct QuizBrain {
             return false
         }
     }
+    
+    func getScore() -> Int {
+       return score
+    }
+    
+    func getQuestionText() -> String {
+        return quiz[questionNumber].text
+    }
+    
+    func getProgress() -> Float {
+        return Float(questionNumber + 1) / Float(quiz.count)
+    }
+    
+    mutating func nextQuestion()  {
+        if questionNumber + 1 < quiz.count {
+            questionNumber += 1
+        } else {
+            questionNumber = 0
+            score = 0
+        }
+    }
+    
 }
-
