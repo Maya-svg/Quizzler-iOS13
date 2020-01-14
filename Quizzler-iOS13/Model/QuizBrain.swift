@@ -10,18 +10,18 @@ import Foundation
 
 struct QuizBrain {
     let quiz = [
-        Question(q: "Sacramento is the capital of California.", a: "True"),
-        Question(q: "The California Quail is the State Bird.", a: "True"),
-        Question(q: "The Garibaldi is the state saltwater fish.", a: "True"),
-        Question(q: "California is the most populous state in the country.", a: "True"),
-        Question(q: "California was the last state to join the United States.", a: "False"),
-        Question(q: "California is considered the Golden State.", a: "True"),
-        Question(q: "Christopher Columbus discovered California.", a: "False"),
-        Question(q: "Gold was first discovered in California in 1849.", a: "True"),
-        Question(q: "California is home to both the tallest and largest tree in the world.", a: "True"),
-        Question(q: "Mount Whitney is the tallest mountain in the United States", a: "False"),
+        Question(q: "Boston is the capital of Massachusetts", a: "True"),
+        Question(q: "Boston was home to the first U.S. chocolate factory", a: "True"),
+        Question(q: "Boston is also know as Beantown", a: "True"),
+        Question(q: "California is the most populous state in the country", a: "True"),
+        Question(q: "California is the poorest state in the United States", a: "False"),
+        Question(q: "Christmas was once banned in Boston", a: "True"),
+        Question(q: "The New England Patriots have 6 Super Bowl wins", a: "True"),
+        Question(q: "Gold was first discovered in California in 1849", a: "True"),
+        Question(q: "The John Hancock building is in California", a: "False"),
+        Question(q: "Bostonians never walk", a: "False"),
         Question(q: "The California State Bear is the Black Bear", a: "False"),
-        Question(q: "'Eureka' is the state motto", a: "True")
+        Question(q: "Eureka' is the Boston's state motto", a: "False")
     ]
     
     var questionNumber = 0
